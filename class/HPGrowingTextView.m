@@ -106,6 +106,12 @@
     r.size.width -= contentInset.left + contentInset.right;
     
     internalTextView.frame = r;
+    
+    if (!self.intialSubviewLayoutComplete)
+    {
+        minHeight = internalTextView.frame.size.height;
+        self.intialSubviewLayoutComplete = YES;
+    }
 }
 
 -(void)setContentInset:(UIEdgeInsets)inset
